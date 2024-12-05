@@ -3,6 +3,7 @@ import "./Header.css"; // Import your custom styles here
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchModal from './SearchModal';
+import search from "./assets/search.png"
 
 
 const Header = () => {
@@ -37,8 +38,10 @@ const Header = () => {
                         <a href="/login" className="link">
                             Register a New Account / Login
                         </a>
-                        <Link to="#" className="link" onClick={toggleSearchModal}>
-                            <i className="icon-search"></i> Search
+                        <Link to="#" className="link search" onClick={toggleSearchModal}>
+                           
+                            <i className="icon-search"></i> Search <img className="search-icon" src={search}></img>
+                            
                         </Link>
                         {isSearchOpen && <SearchModal onClose={toggleSearchModal} />}
                     </div>
